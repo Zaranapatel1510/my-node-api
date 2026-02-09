@@ -1,15 +1,12 @@
 const express = require('express');
-const cors = require('cors');
+const cors = require('cors'); // Aa line ઉમેરો
 const app = express();
 
-app.use(cors()); // આ React ને ડેટા લેવાની મંજૂરી આપશે
-app.use(express.json()); // JSON ફોર્મેટ રીડ કરવા માટે
+app.use(cors()); // Aa line ઉમેરો
 
 app.get('/api', (req, res) => {
-    // response 'Hi' મોકલીએ છીએ
-    res.json({ message: "Hi" });
+    res.send('Hi from Render!');
 });
 
-app.listen(5000, () => {
-    console.log("Server is running on http://localhost:5000");
-});
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

@@ -9,8 +9,8 @@ function App() {
 
   useEffect(() => {
     fetch("http://localhost:5000/api")
-      .then(res => res.json())
-      .then(data => setMessage(data.message))
+      .then(res => res.text())
+      .then(data => setMessage(data))
       .catch(err => console.error(err))
   }, [])
 
